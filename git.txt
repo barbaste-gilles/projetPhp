@@ -1,0 +1,130 @@
+Microsoft Windows [version 10.0.17134.753]
+(c) 2018 Microsoft Corporation. Tous droits réservés.
+
+C:\Users\Etudiant>git --version
+git version 2.22.0.windows.1
+
+C:\Users\Etudiant>git config --global gilles.barbaste
+
+C:\Users\Etudiant>git config --global giba1955@orange.fr
+error: invalid key: giba1955@orange.fr
+
+C:\Users\Etudiant>git config --global user.mail giba1955@orange.fr
+
+C:\Users\Etudiant>mkdir test
+
+C:\Users\Etudiant>cd test
+
+C:\Users\Etudiant\test>git init
+Initialized empty Git repository in C:/Users/Etudiant/test/.git/
+
+C:\Users\Etudiant\test>git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+C:\Users\Etudiant\test>git add index.html
+
+C:\Users\Etudiant\test>git commit -m "Lancement projet"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Etudiant@MININT-702H3AF.(none)')
+
+C:\Users\Etudiant\test>git config --global user.email "you@example.com"
+
+C:\Users\Etudiant\test>  git config --global user.name "gilles.barbaste"
+
+C:\Users\Etudiant\test>git config --global user.email "giba1955@orange.fr"
+
+C:\Users\Etudiant\test>git commit -m "Lancement projet"
+[master (root-commit) 56aee05] Lancement projet
+ 1 file changed, 14 insertions(+)
+ create mode 100644 index.html
+
+C:\Users\Etudiant\test>git log
+commit 56aee057dcd6888340157e1a1f80e4d387e913f2 (HEAD -> master)
+Author: gilles.barbaste <giba1955@orange.fr>
+Date:   Fri Jul 12 11:04:35 2019 +0200
+
+    Lancement projet
+
+C:\Users\Etudiant\test>git branch modifBackground
+
+C:\Users\Etudiant\test>git branch
+* master
+  modifBackground
+
+C:\Users\Etudiant\test>git checkout modifBackground
+Switched to branch 'modifBackground'
+
+C:\Users\Etudiant\test>git add index.html
+
+C:\Users\Etudiant\test>git commit -m "modification du background"
+[modifBackground a174fa4] modification du background
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\Etudiant\test>git log
+commit a174fa4aa8ed437ab5bd1b845ad49cc8a1636652 (HEAD -> modifBackground)
+Author: gilles.barbaste <giba1955@orange.fr>
+Date:   Fri Jul 12 11:13:53 2019 +0200
+
+    modification du background
+
+commit 56aee057dcd6888340157e1a1f80e4d387e913f2 (master)
+Author: gilles.barbaste <giba1955@orange.fr>
+Date:   Fri Jul 12 11:04:35 2019 +0200
+
+    Lancement projet
+
+C:\Users\Etudiant\test>git add index.html
+
+C:\Users\Etudiant\test>git commit -m "modification du Background"
+[modifBackground 1de9dc8] modification du Background
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\Etudiant\test>git log
+commit 1de9dc873d671e48ff764578e024b893ca49b2e5 (HEAD -> modifBackground)
+Author: gilles.barbaste <giba1955@orange.fr>
+Date:   Fri Jul 12 11:18:04 2019 +0200
+
+    modification du Background
+
+commit a174fa4aa8ed437ab5bd1b845ad49cc8a1636652
+Author: gilles.barbaste <giba1955@orange.fr>
+Date:   Fri Jul 12 11:13:53 2019 +0200
+
+    modification du background
+
+commit 56aee057dcd6888340157e1a1f80e4d387e913f2 (master)
+Author: gilles.barbaste <giba1955@orange.fr>
+Date:   Fri Jul 12 11:04:35 2019 +0200
+
+    Lancement projet
+
+C:\Users\Etudiant\test>git checkout master
+Switched to branch 'master'
+
+C:\Users\Etudiant\test>git merge modifBackground
+Updating 56aee05..1de9dc8
+Fast-forward
+ index.html | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\Etudiant\test>git branch -d modifBackground
+Deleted branch modifBackground (was 1de9dc8).
+
+C:\Users\Etudiant\test>git branch
+* master
+
+C:\Users\Etudiant\test>
